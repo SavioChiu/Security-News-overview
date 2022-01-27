@@ -97,6 +97,7 @@ class web_clawer:
         scrollbar = tkinter.Scrollbar(root)
         self.listbox = tkinter.Listbox(root, width=200, height=25, font=font1, yscrollcommand=scrollbar.set)
         self.listbox.bind('<ButtonRelease-1>',self.listbox_select)
+        self.listbox.bind('<Return>',self.listbox_select)
         scrollbar.config(command=self.listbox.yview)
 
         self.listbox.insert(0, listbox_format.format(title='Title', source='Source', time='Time'))
